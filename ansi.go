@@ -12,6 +12,6 @@ func PrintC(s string, c Color) {
 	fmt.Printf("\x1b[%sm%s\x1b[0m", c, s)
 }
 
-func rintLnC(s string, c Color) {
+func PrintLnC(s string, c Color) {
 	fmt.Printf("\x1b[%sm%s\x1b[0m\n", c, s)
 }
