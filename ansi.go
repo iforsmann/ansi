@@ -28,3 +28,15 @@ func PrintLnC(s string, c Color) {
 func PrintBC(s string, c Color, b Color) {
 	fmt.Printf("\x1b[38;2;" + string(c) + "m" + "\x1b[48;2;" + string(b) + "m" + s + "\x1b[0m")
 }
+
+func SPrintC(s string, c Color) string {
+	return "\x1b[38;2;" + string(c) + "m" + s + "\x1b[0m"
+}
+
+func SPrintLnC(s string, c Color) string {
+	return "\x1b[38;2;" + string(c) + "m" + s + "\x1b[0m\n"
+}
+
+func SPrintBC(s string, c Color, b Color) string {
+	return "\x1b[38;2;" + string(c) + "m" + "\x1b[48;2;" + string(b) + "m" + s + "\x1b[0m"
+}
