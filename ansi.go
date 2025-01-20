@@ -1,6 +1,9 @@
 package ansi
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 const (
 	RED    Color = "255;0;0"
@@ -39,4 +42,9 @@ func SPrintLnC(s string, c Color) string {
 
 func SPrintBC(s string, c Color, b Color) string {
 	return "\x1b[38;2;" + string(c) + "m" + "\x1b[48;2;" + string(b) + "m" + s + "\x1b[0m"
+}
+
+// Moves the cursor up n lines and positions it at the start of the line
+func ResetCursor(n int) {
+	fmt.Print("\x1b[" + strconv.Itoa(n) + "F")
 }
